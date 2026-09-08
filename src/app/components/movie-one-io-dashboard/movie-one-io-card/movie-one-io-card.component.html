@@ -1,0 +1,58 @@
+<div class="row" *ngIf="getmovieinfo.length>0;else nomovie">
+    <div class="col-md-4" *ngFor="let movie of getmovieinfo">
+        <div class="card mb-3">
+            <div class="card-body p-0 movicard">
+                <figure>
+                <img src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path || movie.poster_path}}" 
+                [alt]="movie.backdrop_path || movie.poster_path"
+                [title]="movie.original_title || movie.title">
+            </figure>
+
+            <figcaption>
+                <div class="titlecaption">
+                    <div class="row">
+                        <div class="col-md-10 movieContent">
+                            <h3>{{movie.original_title || movie.title}}</h3>
+                        </div>
+
+                        <div class="col-md-2">
+                            <span class="badge p-2"
+                            [ngClass]="{
+                                'badge-success':movie.vote_average >=7,
+                                'badge-warning': movie.vote_average < 7 && movie.vote_average >= 5,
+                                'badge-danger' : movie.vote_average < 5
+                            }"
+                            >&#9733; {{movie.vote_average}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview">
+                    <h2 class="mb-0">
+                        <em>
+                            {{movie.original_title || movie.title}}
+                        </em>
+                    </h2>
+                    <p>
+                        {{movie.overview}}
+                    </p>
+                </div>
+            </figcaption>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <button 
+                (click)="onedit(movie)"
+                mat-icon-button class="font-weight-bold text-primary"><mat-icon>movie_edit</mat-icon></button>
+
+                <button 
+                (click)="ondelete(movie.id)"
+                mat-icon-button color="warn" class="font-weight-bold"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #nomovie>
+    <p class="alert alert-warning">
+        CURRENTLY NO MOVIE IS ADDED
+    </p>
+</ng-template>
