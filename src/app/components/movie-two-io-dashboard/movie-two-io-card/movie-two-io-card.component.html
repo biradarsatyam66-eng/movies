@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-4 mb-3" *ngFor="let movie of getmovieinfo">
+      <mat-card class="example-card h-100 d-flex flex-column">
+            <mat-card-title-group>
+              <mat-card-title>{{movie.title|| movie.original_title}}</mat-card-title>
+                <mat-card-subtitle><span 
+                    [ngClass]="{
+                        'badge-success':movie.vote_average >= 7,
+                        'badge-warning':movie.vote_average >=5 && movie.vote_average < 7,
+                        'badge-danger':movie.vote_average < 5
+                    }"
+                    class="badge">&#9733; {{movie.vote_average}}</span></mat-card-subtitle>
+                <img mat-card-xl-image src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path || movie.poster_path}}" >
+              </mat-card-title-group>
+  
+            <mat-card-content>
+              <p>{{movie.overview}}</p>
+            </mat-card-content>
+
+          <mat-card-actions class="d-flex justify-content-between mt-auto">
+            <button 
+            (click)="onEdit(movie)"
+            mat-button color="primary">EDIT</button>
+
+            <button 
+            (click)="ondelete(movie.id)"
+            mat-button color="warn">DELETE</button>
+          </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

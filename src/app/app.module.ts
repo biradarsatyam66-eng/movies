@@ -11,6 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+
+
+import { MovieTwoIoDashboardComponent } from './components/movie-two-io-dashboard/movie-two-io-dashboard.component';
+import { MovieTwoIoFormComponent } from './components/movie-two-io-dashboard/movie-two-io-form/movie-two-io-form.component';
+import { MovieTwoIoCardComponent } from './components/movie-two-io-dashboard/movie-two-io-card/movie-two-io-card.component';
 
 
 
@@ -19,7 +25,10 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     MovieOneIoDashboardComponent,
     MovieOneIoFormComponent,
-    MovieOneIoCardComponent
+    MovieOneIoCardComponent,
+    MovieTwoIoDashboardComponent,
+    MovieTwoIoFormComponent,
+    MovieTwoIoCardComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

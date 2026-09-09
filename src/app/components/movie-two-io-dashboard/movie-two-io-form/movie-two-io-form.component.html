@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="m-0"><strong>{{isineditmode?'UPDATE MOVIE':'ADD MOVIE'}}</strong></h3>
+    </div>
+    <div class="card-body">
+        <form #movieform="ngForm" (ngSubmit)="onAddMovie()">
+            <div class="form-group">
+                <label for="title">TITLE <sup class="text-danger font-weight-bold">*</sup> :-</label>
+                <input 
+                required
+                ngModel
+                name="title"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="overview">CONTENT <sup class="text-danger font-weight-bold">*</sup> :-</label>
+                <textarea 
+                required
+                ngModel
+                name="overview" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="vote_average">RATING <sup class="text-danger font-weight-bold">*</sup> :-</label>
+                <input 
+                required
+                ngModel
+                name="vote_average"
+                type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="poster_path">IMAGER URL <sup class="text-danger font-weight-bold">*</sup> :-</label>
+                <input 
+                required
+                ngModel
+                name="poster_path"
+                type="text" class="form-control">
+            </div>
+            <p *ngIf="isvalid && movieform.invalid">
+                <strong class="text-danger">PLEASE ENTER ALL THE DETAILS !!!</strong>
+            </p>
+
+            <div>
+                <button 
+                *ngIf="!isineditmode"
+                mat-raised-button color="primary" class="btn-block">ADD MOVIE</button>
+                
+                <button 
+                *ngIf="isineditmode"
+                (click)="onUpdatemovie()"
+                mat-raised-button color="accent" class="btn-block">UPDATE MOVIE</button>
+            </div>
+        </form>
+    </div>
+</div>

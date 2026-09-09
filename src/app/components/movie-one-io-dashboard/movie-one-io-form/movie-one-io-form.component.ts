@@ -36,7 +36,7 @@ export class MovieOneIoFormComponent implements OnInit,OnChanges {
     if(this.movieform.valid){
       this.isInvalid = false
 
-      let newmovie = {...this.movieform.value,id:Date.now().toString()}
+      let newmovie:Imovies = {...this.movieform.value,id:Date.now().toString()}
     this.emitnewmovie.emit(newmovie)
     this.movieform.reset()
     this._snackbar.onShowSnackbar('NEW MOVIE ADDED SUCCESSFULLY!!!')
