@@ -17,6 +17,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MovieTwoIoDashboardComponent } from './components/movie-two-io-dashboard/movie-two-io-dashboard.component';
 import { MovieTwoIoFormComponent } from './components/movie-two-io-dashboard/movie-two-io-form/movie-two-io-form.component';
 import { MovieTwoIoCardComponent } from './components/movie-two-io-dashboard/movie-two-io-card/movie-two-io-card.component';
+import { MovieThreeIoDashboardComponent } from './components/movie-three-io-dashboard/movie-three-io-dashboard.component';
+import { MovieThreeIoFormComponent } from './components/movie-three-io-dashboard/movie-three-io-form/movie-three-io-form.component';
+import { MovieThreeIoCardComponent } from './components/movie-three-io-dashboard/movie-three-io-card/movie-three-io-card.component';
 
 
 
@@ -28,7 +31,10 @@ import { MovieTwoIoCardComponent } from './components/movie-two-io-dashboard/mov
     MovieOneIoCardComponent,
     MovieTwoIoDashboardComponent,
     MovieTwoIoFormComponent,
-    MovieTwoIoCardComponent
+    MovieTwoIoCardComponent,
+    MovieThreeIoDashboardComponent,
+    MovieThreeIoFormComponent,
+    MovieThreeIoCardComponent
   ],
   imports: [
     BrowserModule,

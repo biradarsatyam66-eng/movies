@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-movie-three-io-form
+        (emitnewobj)="getnewobj($event)"
+        [EditObj]="editobj"
+        (emitupdateobj)="getupdateobj($event)"
+        ></app-movie-three-io-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row">
+    <div class="col-md-12">
+        <app-movie-three-io-card
+        [getmovieinfo]="movieArr"
+        (emiteditobj)="geteditobj($event)"
+        (emitdeleteobj)="getdeleteobj($event)"
+        ></app-movie-three-io-card>
+    </div>
+</div>

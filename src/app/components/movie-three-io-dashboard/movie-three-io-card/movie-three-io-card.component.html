@@ -1,0 +1,36 @@
+<div class="row" *ngIf="getmovieinfo.length>0;else nomovie">
+    <div class="col-md-4 mb-3" *ngFor="let movie of getmovieinfo">
+        <mat-card class="example-card h-100 d-flex flex-column">
+            <mat-card-header>
+                <mat-card-title class="titleContent">{{movie.title || movie.original_title}}</mat-card-title>
+                <mat-card-subtitle><span 
+                    [ngClass]="{
+                        'badge-success': movie.vote_average >=7,
+                        'badge-warning': movie.vote_average >= 5 && movie.vote_average < 7,
+                        'badge-danger': movie.vote_average < 5
+                    }"
+                    class="badge">&#9733; {{movie.vote_average}}</span></mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path || movie.poster_path}}" alt="{{movie.title || movie.original_title}}" title="{{movie.title || movie.original_title}}">
+            <mat-card-content>
+                <p>
+                {{movie.overview}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions class="mt-auto d-flex justify-content-between">
+                <button 
+                (click)="onedit(movie)"
+                mat-raised-button color="primary" class="btn-sm">EDIT</button>
+
+                <button 
+                (click)="ondelete(movie.id)"
+                mat-raised-button color="warn" class="btn-sm">DELETE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<ng-template #nomovie>
+    <p class="alert alert-warning">
+        CURRENTLY NO MOVIE FOUND !!!!!!!!!
+    </p>
+</ng-template>

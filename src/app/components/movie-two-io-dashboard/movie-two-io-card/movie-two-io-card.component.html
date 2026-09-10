@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="getmovieinfo.length>0;else nomovie">
   <div class="col-md-4 mb-3" *ngFor="let movie of getmovieinfo">
       <mat-card class="example-card h-100 d-flex flex-column">
             <mat-card-title-group>
@@ -29,3 +29,9 @@
     </mat-card>
   </div>
 </div>
+
+<ng-template #nomovie>
+  <p class="alert alert-warning">
+    CURRENTLY NO MOVIE FOUND !!!
+  </p>
+</ng-template>
