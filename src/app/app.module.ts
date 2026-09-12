@@ -20,6 +20,9 @@ import { MovieTwoIoCardComponent } from './components/movie-two-io-dashboard/mov
 import { MovieThreeIoDashboardComponent } from './components/movie-three-io-dashboard/movie-three-io-dashboard.component';
 import { MovieThreeIoFormComponent } from './components/movie-three-io-dashboard/movie-three-io-form/movie-three-io-form.component';
 import { MovieThreeIoCardComponent } from './components/movie-three-io-dashboard/movie-three-io-card/movie-three-io-card.component';
+import { MovieFourIoDashboardComponent } from './components/movie-four-io-dashboard/movie-four-io-dashboard.component';
+import { MovieFourIoFormComponent } from './components/movie-four-io-dashboard/movie-four-io-form/movie-four-io-form.component';
+import { MovieFourIoCardComponent } from './components/movie-four-io-dashboard/movie-four-io-card/movie-four-io-card.component';
 
 
 
@@ -34,7 +37,10 @@ import { MovieThreeIoCardComponent } from './components/movie-three-io-dashboard
     MovieTwoIoCardComponent,
     MovieThreeIoDashboardComponent,
     MovieThreeIoFormComponent,
-    MovieThreeIoCardComponent
+    MovieThreeIoCardComponent,
+    MovieFourIoDashboardComponent,
+    MovieFourIoFormComponent,
+    MovieFourIoCardComponent
   ],
   imports: [
     BrowserModule,

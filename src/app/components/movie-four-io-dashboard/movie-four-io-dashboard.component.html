@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-movie-four-io-form></app-movie-four-io-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row">
+    <div class="col-md-3 mb-2" *ngFor="let movie of movieArr">
+        <app-movie-four-io-card
+        [getmoviedata]="movie"
+        ></app-movie-four-io-card>
+    </div>
+</div>
