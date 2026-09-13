@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Imovies } from 'src/app/model/movie.interface';
 
 @Component({
@@ -9,10 +9,20 @@ import { Imovies } from 'src/app/model/movie.interface';
 export class MovieFourIoCardComponent implements OnInit {
 
   @Input() getmoviedata !: Imovies
+  @Output() emiteditobj = new EventEmitter<Imovies>()
+  @Output() emitdeleteobj = new EventEmitter<number>()
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onedit(movie:Imovies){
+    this.emiteditobj.emit(movie)
+  }
+
+  ondelete(movieId:number){
+    this.emitdeleteobj.emit(movieId)
   }
 
 }
