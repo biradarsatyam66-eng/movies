@@ -1,1 +1,28 @@
-<p>movie-five-card works!</p>
+
+<mat-card class="h-100 d-flex flex-column">
+  <mat-card-title-group>
+    <mat-card-title>{{getmovie.original_title || getmovie.title}}</mat-card-title>
+    <mat-card-subtitle><span class="badge"
+        [ngClass]="{
+            'badge-success': getmovie.vote_average > 7,
+            'badge-warning': getmovie.vote_average >= 5 && getmovie.vote_average < 7,
+            'badge-danger': getmovie.vote_average < 5
+        }"
+        >&#9733; {{getmovie.vote_average}}</span></mat-card-subtitle>
+    <img mat-card-md-image 
+    src="http://image.tmdb.org/t/p/w500/{{getmovie.backdrop_path || getmovie.poster_path}}" 
+    [alt]="getmovie.original_title || getmovie.title"
+    [title]="getmovie.original_title || getmovie.title"
+    >
+  </mat-card-title-group>
+  <mat-card-content>
+    {{getmovie.overview}}
+  </mat-card-content>
+  <mat-card-actions class="mt-auto d-flex justify-content-between">
+    <button mat-stroked-button class="text-primary bg-white"><mat-icon>edit</mat-icon></button>
+
+    <button 
+    (click)="ondelete(getmovie.id)"
+    mat-stroked-button class="bg-white" color="warn"><mat-icon>delete</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

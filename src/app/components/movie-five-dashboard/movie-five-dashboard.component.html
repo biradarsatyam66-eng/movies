@@ -1,1 +1,19 @@
-<p>movie-five-dashboard works!</p>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-movie-five-form></app-movie-five-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row" *ngIf="movieArr.length>0;else nomovie">
+    <div class="col-md-4 mb-3" *ngFor="let movie of movieArr">
+        <app-movie-five-card
+        [getmovie]="movie"
+        (emitdeleteobj)="getdeleteobj($event)"
+        ></app-movie-five-card>
+    </div>
+</div>
+<ng-template #nomovie>
+    <p class="alert alert-warning">
+        NO MOVIES YET !!!
+    </p>
+</ng-template>
