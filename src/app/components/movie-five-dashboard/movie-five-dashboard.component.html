@@ -1,6 +1,10 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <app-movie-five-form></app-movie-five-form>
+        <app-movie-five-form
+        (emitnewmovie)="getnewmovie($event)"
+        [EditObj]="editobj"
+        (emitupdatemovie)="getupdatemovie($event)"
+        ></app-movie-five-form>
     </div>
 </div>
 <hr class="bg-primary">
@@ -9,6 +13,7 @@
         <app-movie-five-card
         [getmovie]="movie"
         (emitdeleteobj)="getdeleteobj($event)"
+        (emiteditmovie)="geteditobj($event)"
         ></app-movie-five-card>
     </div>
 </div>

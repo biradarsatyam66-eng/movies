@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { MovieTwoIoDashboardComponent } from './components/movie-two-io-dashboard/movie-two-io-dashboard.component';
@@ -26,6 +27,7 @@ import { MovieFourIoCardComponent } from './components/movie-four-io-dashboard/m
 import { MovieFiveDashboardComponent } from './components/movie-five-dashboard/movie-five-dashboard.component';
 import { MovieFiveFormComponent } from './components/movie-five-dashboard/movie-five-form/movie-five-form.component';
 import { MovieFiveCardComponent } from './components/movie-five-dashboard/movie-five-card/movie-five-card.component';
+import { GetconfirmComponent } from './components/getconfirm/getconfirm.component';
 
 
 
@@ -46,7 +48,8 @@ import { MovieFiveCardComponent } from './components/movie-five-dashboard/movie-
     MovieFourIoCardComponent,
     MovieFiveDashboardComponent,
     MovieFiveFormComponent,
-    MovieFiveCardComponent
+    MovieFiveCardComponent,
+    GetconfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { MovieFiveCardComponent } from './components/movie-five-dashboard/movie-
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

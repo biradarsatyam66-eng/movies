@@ -19,7 +19,9 @@
     {{getmovie.overview}}
   </mat-card-content>
   <mat-card-actions class="mt-auto d-flex justify-content-between">
-    <button mat-stroked-button class="text-primary bg-white"><mat-icon>edit</mat-icon></button>
+    <button 
+    (click)="onedit(getmovie)"
+    mat-stroked-button class="text-primary bg-white"><mat-icon>edit</mat-icon></button>
 
     <button 
     (click)="ondelete(getmovie.id)"
